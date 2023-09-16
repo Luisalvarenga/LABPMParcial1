@@ -32,6 +32,8 @@ public class PublicacionRespository {
     }
 
     public List<Publicacion> getAllListRevistas(){
+
+        //List<Revista> lstRevista = this.mainList.stream().filter(publicacion -> publicacion.getTipoPublicacion() == 2).collect(Collectors.toList());
         return this.mainList.stream().filter(publicacion -> publicacion.getTipoPublicacion() == 2).collect(Collectors.toList());
     }
 

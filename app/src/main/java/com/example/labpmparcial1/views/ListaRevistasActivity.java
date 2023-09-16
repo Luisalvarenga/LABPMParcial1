@@ -1,8 +1,12 @@
 package com.example.labpmparcial1.views;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -27,5 +31,38 @@ public class ListaRevistasActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<>
                 (this, android.R.layout.simple_list_item_1, dbSource.getAllListRevistas());
         lsvRevistas.setAdapter(arrayAdapter);
+
+        lsvRevistas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ListaRevistasActivity.this);
+                builder.setTitle("Eliminar Revista");
+                builder.setMessage("¿Estás seguro de que quieres eliminar a esta Revista?");
+
+                builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Revista revistaEncontrada = (Revista)lsvRevistas.getAdapter().getItem((int)id);
+                        dbSource.DeletePublicacion(revistaEncontrada.getCodigoPublicacion());
+                        arrayAdapter.notifyDataSetChanged();
+                    }
+                });
+
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.create().show();
+                return true;
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        arrayAdapter.notifyDataSetChanged();
+        super.onResume();
     }
 }

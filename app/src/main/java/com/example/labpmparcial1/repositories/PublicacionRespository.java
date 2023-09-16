@@ -27,14 +27,26 @@ public class PublicacionRespository {
         return this.mainList;
     }
 
-    public List<Publicacion> getAllListLibros(){
-        return this.mainList.stream().filter(publicacion -> publicacion.getTipoPublicacion() == 1).collect(Collectors.toList());
+    public List<Libro> getAllListLibros(){
+        List<Libro> libros = new ArrayList<>();
+
+        for (Publicacion publicacion : mainList) {
+            if (publicacion instanceof Libro) {
+                libros.add((Libro) publicacion);
+            }
+        }
+        return libros;
     }
 
-    public List<Publicacion> getAllListRevistas(){
+    public List<Revista> getAllListRevistas(){
+        List<Revista> revistas = new ArrayList<>();
 
-        //List<Revista> lstRevista = this.mainList.stream().filter(publicacion -> publicacion.getTipoPublicacion() == 2).collect(Collectors.toList());
-        return this.mainList.stream().filter(publicacion -> publicacion.getTipoPublicacion() == 2).collect(Collectors.toList());
+        for (Publicacion publicacion : mainList) {
+            if (publicacion instanceof Revista) {
+                revistas.add((Revista) publicacion);
+            }
+        }
+        return revistas;
     }
 
     public Publicacion getPublicacionById(int idMainObject){

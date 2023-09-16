@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLista.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, MostrarListaActivity.class));
+            //ok
 
         });
         btnAcerca.setOnClickListener(new View.OnClickListener(){

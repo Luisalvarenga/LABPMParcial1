@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity">
+    tools:context=".views.IngresarPublicacionActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -20,43 +20,32 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:text="Primera Evaluación"
+            android:text="Opciones"
             android:textColor="@color/white"
             android:textSize="26sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnAgregar"
+            android:id="@+id/btnLibro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Ingresar Publicacion"
+            android:text="Libros"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnRevista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="Revistas"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnLista"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Lista De Publicaciones"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnAcerca"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Acerca de"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

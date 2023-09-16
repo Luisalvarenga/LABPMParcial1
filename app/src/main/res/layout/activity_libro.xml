@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    tools:context=".views.LibroActivity">
+    <EditText
+    android:id="@+id/etCodigoPublicacion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Código de Publicación" />
+
+    <EditText
+        android:id="@+id/etTituloPublicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de Publicación" />
+
+    <EditText
+        android:id="@+id/etAnioPublicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Año de Publicación" />
+
+    <CheckBox
+        android:id="@+id/cbEstadoPrestamo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado de Préstamo" />
+
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+
+</LinearLayout>

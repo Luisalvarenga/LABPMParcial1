@@ -37,10 +37,32 @@ public class RevistaActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbSource.AddPublicacion(new Revista( Integer.parseInt(etCodigoPublicacion.getText().toString()),
-                        etTituloPublicacion.getText().toString(),
-                        Integer.parseInt(etAnioPublicacion.getText().toString()),
-                        Integer.parseInt(etNumeroRevista.getText().toString()) ));
+                String codigoPublicacion = etCodigoPublicacion.getText().toString();
+                String tituloPublicacion = etTituloPublicacion.getText().toString();
+                String anioPublicacion = etAnioPublicacion.getText().toString();
+                String numeroRevista = etNumeroRevista.getText().toString();
+
+                if (codigoPublicacion.isEmpty() || tituloPublicacion.isEmpty() || anioPublicacion.isEmpty() || numeroRevista.isEmpty()) {
+                    Toast.makeText(RevistaActivity.this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Validar que anioPublicacion y numeroRevista sean números
+                try {
+                    int anio = Integer.parseInt(anioPublicacion);
+                    int numero = Integer.parseInt(numeroRevista);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(RevistaActivity.this, "Año y número de revista deben ser números enteros", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Aquí puedes proceder con la inserción de la revista
+                dbSource.AddPublicacion(new Revista(
+                        Integer.parseInt(codigoPublicacion),
+                        tituloPublicacion,
+                        Integer.parseInt(anioPublicacion),
+                        Integer.parseInt(numeroRevista)
+                ));
 
                 Toast.makeText(RevistaActivity.this, "Inserción de revista exitosa", Toast.LENGTH_SHORT).show();
                 finish();

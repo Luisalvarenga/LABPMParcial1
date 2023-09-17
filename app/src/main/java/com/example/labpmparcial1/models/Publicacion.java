@@ -40,4 +40,9 @@ public abstract class Publicacion {
     public int getTipoPublicacion() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return  this.codigoPublicacion +" "+ this.tituloPublicacion + " " + this.anioPublicacion + " Tipo publicación: " + getTipoPublicacion();
+    }
 }

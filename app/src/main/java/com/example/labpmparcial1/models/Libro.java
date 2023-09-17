@@ -31,4 +31,9 @@ public class Libro extends Publicacion implements IPrestable {
     public int getTipoPublicacion(){
         return 1;
     }
+
+    @Override
+    public String toString() {
+        return  this.codigoPublicacion + " " +this.tituloPublicacion + " " + this.anioPublicacion + " " + this.estadoPrestamo;
+    }
 }

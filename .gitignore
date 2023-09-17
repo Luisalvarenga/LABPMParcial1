@@ -25,3 +25,11 @@ replay_pid*
 local.properties
 local.properties
 *.properties
+.gradle/8.0/executionHistory/executionHistory.bin
+.gradle/8.0/executionHistory/executionHistory.bin
+.gradle/8.0/executionHistory/executionHistory.bin
+.gradle/8.0/executionHistory/executionHistory.lock
+.gradle/8.0/fileHashes/fileHashes.bin
+.gradle/8.0/fileHashes/fileHashes.lock
+.gradle/8.0/fileHashes/resourceHashesCache.bin
+.gradle/file-system.probe

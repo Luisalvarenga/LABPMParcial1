@@ -15,8 +15,8 @@ public class PublicacionRespository {
 
     public PublicacionRespository(){
         mainList = new ArrayList<>();
-        Libro l1 = new Libro(1234, "r", 1234, true){};
-        Revista r1 = new Revista(1234, "r", 1234, 12345){};
+        Libro l1 = new Libro(1234, "libroPrueba1", 1995, true){};
+        Revista r1 = new Revista(12345, "revistaPrueba1", 2010, 12345){};
 
         mainList.add(l1);
         mainList.add(r1);
@@ -50,10 +50,27 @@ public class PublicacionRespository {
     }
 
     public Publicacion getPublicacionById(int idMainObject){
-        //return this.mainListPerson.stream().filter(person -> person.getIdPersona() == idMainObject).findFirst();
         for (Publicacion person : mainList) {
             if (person.getCodigoPublicacion() == idMainObject) {
                 return person;
+            }
+        }
+        return null;
+    }
+
+    public Revista getRevistaById(int idMainObject){
+        for (Publicacion publicacion : mainList) {
+            if (publicacion instanceof Revista && publicacion.getCodigoPublicacion() == idMainObject) {
+                return (Revista) publicacion;
+            }
+        }
+        return null;
+    }
+
+    public Libro getLibroById(int idMainObject){
+        for (Publicacion publicacion : mainList) {
+            if (publicacion instanceof Libro && publicacion.getCodigoPublicacion() == idMainObject) {
+                return (Libro) publicacion;
             }
         }
         return null;
@@ -63,7 +80,7 @@ public class PublicacionRespository {
         return this.mainList.add(mainObject);
     }
 
-    public boolean EditPublicacion(Publicacion mainObject) {
+    /*public boolean EditPublicacion(Publicacion mainObject) {
 
         for (int i = 0; i < mainList.size(); i++) {
             Publicacion person = mainList.get(i);
@@ -73,10 +90,28 @@ public class PublicacionRespository {
             }
         }
         return false;
-    }
+    }*/
 
     public boolean DeletePublicacion(int idMainObject){
         Publicacion objectToDelete = getPublicacionById(idMainObject);
+        if (objectToDelete != null) {
+            mainList.remove(objectToDelete);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean DeleteRevista(int idMainObject){
+        Revista objectToDelete = getRevistaById(idMainObject);
+        if (objectToDelete != null) {
+            mainList.remove(objectToDelete);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean DeleteLibro(int idMainObject){
+        Libro objectToDelete = getLibroById(idMainObject);
         if (objectToDelete != null) {
             mainList.remove(objectToDelete);
             return true;

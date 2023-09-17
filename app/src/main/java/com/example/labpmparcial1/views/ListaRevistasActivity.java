@@ -21,13 +21,12 @@ public class ListaRevistasActivity extends AppCompatActivity {
     ListView lsvRevistas;
     private ArrayAdapter<Revista> arrayAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_revistas);
-
         lsvRevistas = findViewById(R.id.lsvRevistas);
+
         arrayAdapter = new ArrayAdapter<>
                 (this, android.R.layout.simple_list_item_1, dbSource.getAllListRevistas());
         lsvRevistas.setAdapter(arrayAdapter);
@@ -43,8 +42,10 @@ public class ListaRevistasActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Revista revistaEncontrada = (Revista)lsvRevistas.getAdapter().getItem((int)id);
-                        dbSource.DeletePublicacion(revistaEncontrada.getCodigoPublicacion());
-                        arrayAdapter.notifyDataSetChanged();
+                        dbSource.DeleteRevista(revistaEncontrada.getCodigoPublicacion());
+
+                        arrayAdapter.clear();
+                        arrayAdapter.addAll(dbSource.getAllListRevistas());
                     }
                 });
 

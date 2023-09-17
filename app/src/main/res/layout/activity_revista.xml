@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slidesdocsazul_resumen_textura_pol_gono_tecnolog_a_7644160408"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_height="match_parent"
     tools:context=".views.RevistaActivity">
 
     <EditText
         android:id="@+id/etCodigoPublicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Código de Publicación" />
+        android:hint="Código de Publicación"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/etTituloPublicacion"
@@ -25,18 +26,22 @@
         android:id="@+id/etAnioPublicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Año de Publicación" />
+        android:hint="Año de Publicación"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/etNumeroRevista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Número de Revista" />
+        android:hint="Número de Revista"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar" />
+        android:text="Guardar"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

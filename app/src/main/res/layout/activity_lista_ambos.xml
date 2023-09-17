@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_6633"
     tools:context=".views.ListaAmbosActivity">
 
     <ListView
         android:id="@+id/listViewTodos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+
+        android:textColor="@color/black" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Libros"
             android:textColor="@color/white"
+            android:text="Libros"
+
             android:textSize="18sp"
             android:textStyle="bold" />
         <Button

@@ -44,11 +44,23 @@ public class LibroActivity extends AppCompatActivity {
                     return;
                 }
 
+                // Validar que el código de publicación tenga una longitud específica
+                if (codigoPublicacion.length() != 6) {
+                    Toast.makeText(LibroActivity.this, "El código de publicación debe tener 6 caracteres", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Validar que anioPublicacion sea un número
                 try {
                     int anio = Integer.parseInt(anioPublicacion);
                 } catch (NumberFormatException e) {
                     Toast.makeText(LibroActivity.this, "Año de publicación debe ser un número entero", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Validar el título de publicación
+                if (tituloPublicacion.length() < 5) {
+                    Toast.makeText(LibroActivity.this, "El título debe tener al menos 5 caracteres", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

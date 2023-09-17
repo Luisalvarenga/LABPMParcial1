@@ -47,6 +47,18 @@ public class RevistaActivity extends AppCompatActivity {
                     return;
                 }
 
+                // Validar que codigoPublicacion tenga una longitud específica
+                if (codigoPublicacion.length() != 6) {
+                    Toast.makeText(RevistaActivity.this, "El código de publicación debe tener 6 caracteres", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Validar el título de publicación
+                if (tituloPublicacion.length() < 5) {
+                    Toast.makeText(RevistaActivity.this, "El título debe tener al menos 5 caracteres", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Validar que anioPublicacion y numeroRevista sean números
                 try {
                     int anio = Integer.parseInt(anioPublicacion);
@@ -68,8 +80,6 @@ public class RevistaActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
 
     }
 }

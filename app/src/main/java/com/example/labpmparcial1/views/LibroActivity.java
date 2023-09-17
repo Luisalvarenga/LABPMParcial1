@@ -35,10 +35,30 @@ public class LibroActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbSource.AddPublicacion(new Libro( Integer.parseInt(etCodigoPublicacion.getText().toString()),
-                                                   etTituloPublicacion.getText().toString(),
-                                                   Integer.parseInt(etAnioPublicacion.getText().toString()),
-                                                   cbEstadoPrestamo.isChecked() ));
+                String codigoPublicacion = etCodigoPublicacion.getText().toString();
+                String tituloPublicacion = etTituloPublicacion.getText().toString();
+                String anioPublicacion = etAnioPublicacion.getText().toString();
+
+                if (codigoPublicacion.isEmpty() || tituloPublicacion.isEmpty() || anioPublicacion.isEmpty()) {
+                    Toast.makeText(LibroActivity.this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Validar que anioPublicacion sea un número
+                try {
+                    int anio = Integer.parseInt(anioPublicacion);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(LibroActivity.this, "Año de publicación debe ser un número entero", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Aquí puedes proceder con la inserción del libro
+                dbSource.AddPublicacion(new Libro(
+                        Integer.parseInt(codigoPublicacion),
+                        tituloPublicacion,
+                        Integer.parseInt(anioPublicacion),
+                        cbEstadoPrestamo.isChecked()
+                ));
 
                 Toast.makeText(LibroActivity.this, "Inserción de libro exitosa", Toast.LENGTH_SHORT).show();
                 finish();

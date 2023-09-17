@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/slidesdocsazul_resumen_textura_pol_gono_tecnolog_a_7644160408"
+    android:background="@drawable/fondo9___copia"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".views.LibroActivity">
@@ -14,26 +14,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Código de Publicación"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/etTituloPublicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título de Publicación" />
+        android:hint="Título de Publicación"
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/etAnioPublicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Año de Publicación"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="@color/white" />
 
     <CheckBox
         android:id="@+id/cbEstadoPrestamo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estado de Préstamo" />
+        android:text="Estado de Préstamo"
+        android:textColor="@color/white" />
 
 
     <Button
